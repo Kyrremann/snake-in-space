@@ -1,7 +1,7 @@
 function love.load()
    require "setup"
    gr.setMode(gr.getWidth(), gr.getHeight(), 
-	      not true, -- fullscreen
+	      true, -- fullscreen
 	      true, 0)
    mo.setVisible(false)
    ke.setKeyRepeat(.01, .01)
