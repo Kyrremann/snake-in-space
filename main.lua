@@ -1,9 +1,5 @@
 function love.load()
    require "setup"
-   gr.setMode(gr.getWidth(), gr.getHeight(), 
-	      true, -- fullscreen
-	      true, 0)
-   mo.setVisible(false)
    ke.setKeyRepeat(.01, .01)
    
    sound_theme = au.newSource("sounds/theme.ogg")
@@ -51,16 +47,15 @@ function love.keypressed(key)
       love.event.push('quit')
    end
    if game_mode == 0 then
-      if key == 'return' then
+      if key == 'return' or key == 'g' then
 	 game_mode = 1
-	 the_start_of_time = os.time()
       end
    elseif game_mode == 1 then
-      if key == 'left' then
+      if key == 'left' or key == 'a'  then
 	 player_keypressed(key)
-      elseif key == 'right' then
+      elseif key == 'right' or key == 'd' then
 	 player_keypressed(key)
-      elseif key == ' ' then
+      elseif key == ' ' or key == 'g' then
 	 shieldModeOn = true
       end
    end
@@ -82,9 +77,9 @@ function circlesIntersect(c1X, c1Y, c1Radius, c2X, c2Y, c2Radius)
    end
    
    local distanceX = c2X - c1X;
-   local distanceY = c2Y - c1Y;
-   
+   local distanceY = c2Y - c1Y;   
    local magnitude = math.sqrt(distanceX * distanceX 
 				  + distanceY * distanceY);
+
    return magnitude < c1Radius + c2Radius;
 end

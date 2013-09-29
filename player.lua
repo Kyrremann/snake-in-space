@@ -29,7 +29,6 @@ function player_setup()
 end
 
 function player_update(dt)
-
    if shieldModeOn then
       shield_timer = shield_timer - dt
       if shield_timer <= 0 then
@@ -126,7 +125,7 @@ function draw_triangle(x, y, a, i)
    gr.push()
    if mode_shield and i == shield_current then
       gr.setColor(255, 255, 255, 255)
-      gr.circle("line", x, y, triangleRad, 100)
+      gr.circle("line", x, y, triangleRad + 5, 100)
    end
    gr.setColor(triangleX[i], triangleY[i], triangleA[i], 255)
    gr.translate(x, y)
@@ -148,7 +147,7 @@ end
 function player_keypressed(key)
    if #triangleX == 0 then return end
 
-   if key == 'left' then
+   if key == 'left' or key == 'a' then
       if cookyMode then
 	 triangleA[1] = triangleA[1] - 1
 	 return
@@ -162,7 +161,7 @@ function player_keypressed(key)
       else
 	 triangleA[1] = triangleA[1] - .3
       end
-   elseif key == 'right' then
+   elseif key == 'right' or key == 'd' then
       if cookyMode then
 	 triangleA[1] = triangleA[1] + 1
 	 return

@@ -1,6 +1,6 @@
 gr = love.graphics
 ke = love.keyboard
-mo = love.mouse
+-- mo = love.mouse
 ti = love.timer
 im = love.image
 ev = love.event
