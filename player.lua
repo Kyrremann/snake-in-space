@@ -32,15 +32,15 @@ function player_update(dt)
    if shieldModeOn then
       shield_timer = shield_timer - dt
       if shield_timer <= 0 then
-	 mode_shield = true
-	 local leftover = math.abs(shield_timer)
-	 shield_timer = shield_timer_default - shield_timer
-	 shield_current = shield_current + 1
-	 if shield_current > #triangleX then
-	    shield_current = 1
-	    mode_shield = false
-	    shieldModeOn = false
-	 end
+	     mode_shield = true
+	     local leftover = math.abs(shield_timer)
+	     shield_timer = shield_timer_default - shield_timer
+	     shield_current = shield_current + 1
+	     if shield_current > #triangleX then
+	        shield_current = 1
+	        mode_shield = false
+	        shieldModeOn = false
+	     end
       end
    end
 
@@ -131,12 +131,12 @@ function draw_triangle(x, y, a, i)
    gr.translate(x, y)
    gr.rotate(a)
    if cookyMode then
-      gr.triangle("line", 
+      gr.polygon("line", 
 		  0, -15, 
 		  0, 15, 
 		  30, 0)
    else
-      gr.triangle("line", 
+      gr.polygon("line", 
 		  0, -5, 
 		  0, 5, 
 		  10, 0)

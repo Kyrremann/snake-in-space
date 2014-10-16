@@ -48,15 +48,15 @@ function love.keypressed(key)
    end
    if game_mode == 0 then
       if key == 'return' or key == 'g' then
-	 game_mode = 1
+	     game_mode = 1
       end
    elseif game_mode == 1 then
       if key == 'left' or key == 'a'  then
-	 player_keypressed(key)
+	     player_keypressed(key)
       elseif key == 'right' or key == 'd' then
-	 player_keypressed(key)
+	     player_keypressed(key)
       elseif key == ' ' or key == 'g' then
-	 shieldModeOn = true
+	     shieldModeOn = true
       end
    end
 end

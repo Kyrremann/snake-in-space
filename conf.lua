@@ -3,7 +3,7 @@ function love.conf(t)
    t.author = "Kyrre Havik Eriksen"
    t.url = "https://github.com/Kyrremann/snakeInSpace"
    t.identity = nil 
-   t.version = "0.8.0"
+   t.version = "0.9.1"
    t.release = true
 
    t.console = true
